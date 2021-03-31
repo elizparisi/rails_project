@@ -25,3 +25,6 @@ Recommendation
 Comment
   belongs_to :user
   belongs_to :recommendation
+
+  title:string
+  content:text 
