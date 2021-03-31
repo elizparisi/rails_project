@@ -10,3 +10,8 @@ User
   username:string
   email:string
   password_digest:string
+
+Recommendation
+    belongs_to :user
+    has_many :comments
+    has_many :users, through :comments
