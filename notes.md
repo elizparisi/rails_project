@@ -15,3 +15,9 @@ Recommendation
     belongs_to :user
     has_many :comments
     has_many :users, through :comments
+
+  category:string
+  image_url:string
+  name:string
+  location:string
+  description:text
