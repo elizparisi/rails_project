@@ -12,6 +12,7 @@
   <body>
     <div>
       <% if logged_in? %>
+        <%= link_to "Recommendations", recommendations_path %>
         <%= link_to "Logout", logout_path, method: "delete" %>
       <% else %>
         <%= link_to "Sign Up", signup_path %>
