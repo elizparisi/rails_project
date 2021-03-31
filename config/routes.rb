@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root to: "static#home"
+  root to: 'static#home'
+  get '/signup', to: 'users#new'
 
   resources :comments
   resources :users
