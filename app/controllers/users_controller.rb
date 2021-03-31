@@ -5,7 +5,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
+    @user = User.new(user_params)
+    # check to see if user saves
+    if @user.save
+      # log them in and redirect to show page
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   def show
