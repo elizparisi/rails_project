@@ -21,3 +21,7 @@ Recommendation
   name:string
   location:string
   description:text
+
+Comment
+  belongs_to :user
+  belongs_to :recommendation
