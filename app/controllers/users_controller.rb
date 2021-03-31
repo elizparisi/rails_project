@@ -24,6 +24,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by_id(params[:id])
+    #if it doesn't find id, this will give you nil instead of an error, redirect if no user is found
+    redirect_to root if !@user
   end
 
   private
