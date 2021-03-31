@@ -6,3 +6,7 @@ User
   has_many :recommendations
   has_many :comments
   has_many :recommended_items, through :comments, source :recommendation
+
+  username:string
+  email:string
+  password_digest:string
