@@ -12,9 +12,9 @@ User
   password_digest:string
 
 Recommendation
-    belongs_to :user
-    has_many :comments
-    has_many :users, through :comments
+  belongs_to :user
+  has_many :comments
+  has_many :users, through :comments
 
   category:string
   image_url:string
@@ -27,4 +27,4 @@ Comment
   belongs_to :recommendation
 
   title:string
-  content:text 
+  content:text
