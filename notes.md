@@ -1,0 +1,1 @@
+An app that acts as a discovery guide, a user can create or search for recommendations on a variety of things. A user can edit or delete recommendations they created, and they can comment on another user's recommendation. 
