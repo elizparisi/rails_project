@@ -8,6 +8,10 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new
   end
 
+  def show
+    @recommendation = Recommendation.find_by_id(params[:id])
+  end
+
   def create
     #@recommendation = current_user.recommendations.build(recommendation_params)
     @recommendation = Recommendation.create(recommendation_params)
