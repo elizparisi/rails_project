@@ -26,6 +26,12 @@ class RecommendationsController < ApplicationController
     def edit
       @recommendation = Recommendation.find_by_id(params[:id])
     end
+
+    def update
+      @recommendation = Recommendation.find_by_id(params[:id])
+      @recommendation.update(recommendation_params)
+      redirect_to recommendation_path(@recommendation)
+    end
   end
 
   private
