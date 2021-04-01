@@ -32,6 +32,11 @@ class RecommendationsController < ApplicationController
       @recommendation.update(recommendation_params)
       redirect_to recommendation_path(@recommendation)
     end
+
+    def destroy
+      @recommendation.destroy
+      redirect_to recommendations_path
+    end
   end
 
   private
