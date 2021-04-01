@@ -22,6 +22,10 @@ class RecommendationsController < ApplicationController
     else
       render :new
     end
+
+    def edit
+      @recommendation = Recommendation.find_by_id(params[:id])
+    end
   end
 
   private
