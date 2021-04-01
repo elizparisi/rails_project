@@ -9,7 +9,10 @@ class RecommendationsController < ApplicationController
   end
 
   def create
-    @recommendation = current_user.recommendations.build(recommendation_params)
+    #@recommendation = current_user.recommendations.build(recommendation_params)
+    @recommendation = Recommendation.create(recommendation_params)
+    @recommendation.user_id = current_user.id
+
     if recommendation.save
       redirect_to recommendation_path(@recommendation)
     else
