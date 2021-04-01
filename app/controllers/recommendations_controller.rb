@@ -17,7 +17,7 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.create(recommendation_params)
     @recommendation.user_id = current_user.id
 
-    if recommendation.save
+    if @recommendation.save
       redirect_to recommendation_path(@recommendation)
     else
       render :new
