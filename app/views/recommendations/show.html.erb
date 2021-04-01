@@ -1,1 +1,8 @@
 <h1>Hey <%= current_user.username %>, nice recommendation!</h1>
+
+<%= image_tag(@recommendation.image, style:'width: 25%') %>
+<h3><%= @recommendation.name %></h3>
+<p>Location: <%= @recommendation.location %></p>
+<p>Description: <%= @recommendation.description %></p>
+<%= link_to "Edit", edit_recommendation_path(@recommendation) %>
+<%= link_to "Back", recommendations_path %>
