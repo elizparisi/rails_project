@@ -1,1 +1,13 @@
 <h1>All Recommendations</h1>
+
+<div class="recos">
+  <% @recommendations.each do |recommendation| %>
+
+    <%= image_tag(recommendation.image, style:"width:35%") %>
+    <%= recommendation.name %>
+    <%= recommendation.location %>
+    <%= recommendation.description %>
+    <%= link_to "Learn more", recommendation_path(recommendation) %>
+
+  <% end %>
+</div>
