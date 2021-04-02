@@ -3,11 +3,15 @@
 <div class="recos">
   <% @recommendations.each do |recommendation| %>
 
-    <%= image_tag(recommendation.image, style:"width:35%") %>
+    <%= image_tag(recommendation.image, style:"width:200px" "height:200px") %>
+    <br>
     <%= recommendation.name %>
     <%= recommendation.location %>
     <%= recommendation.description %>
     <%= link_to "Learn more", recommendation_path(recommendation) %>
+    <br>
+    <br>
+    <br>
 
   <% end %>
 </div>
