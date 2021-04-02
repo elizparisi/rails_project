@@ -1,0 +1,15 @@
+<h1>Let us know what you think of this recommendation</h1>
+
+<%= form_for(@comment) do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <br>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+
+<% end %>
