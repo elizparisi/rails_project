@@ -11,7 +11,12 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    # if it's nested and we find the recommendation
+    if params[:recommendation_id] && @recommendation = Recommendation.find_by_id(params[:recommendation_id])
+      @comment = @recommendation.comments.build 
+    else
+      @comment = Comment.new
+    end
   end
 
   def create
