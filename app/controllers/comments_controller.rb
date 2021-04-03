@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
       @comments = @recommendation.comments
     else
       @comments = Comment.all
+    end
   end
 
   def new

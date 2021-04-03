@@ -6,3 +6,5 @@
 <p>Description: <%= @recommendation.description %></p>
 <%= link_to "Edit", edit_recommendation_path(@recommendation) %>
 <%= link_to "Back", recommendations_path %>
+
+<%= link_to "Comment!", new_recommendation_comment_path(@recommendation) %>
