@@ -1,0 +1,7 @@
+<h1>Comments for <%= @recommendation.name %></h1>
+
+<ul>
+<% @comments.each do |comment|%>
+  <li><%= comment.user.username%> says "<%= comment.content%>" about this recommendation: <strong><%= link_to comment.recommendation.name, recommendation_path(comment.recommendation_id) %></strong></li>
+<% end %>
+</ul>
