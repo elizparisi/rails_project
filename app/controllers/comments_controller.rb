@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action: :redirect_if_not_logged_in
+  before_action :redirect_if_not_logged_in
 
   def index
     #check to see if it's nested (is there a recommendation id?) & is the id good data?
@@ -21,6 +21,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @recommendation = Recommendation.find(params[:comment][:recommendation_id])
     @comment = current_user.comments.build(comment_params)
 
     if @comment.save
