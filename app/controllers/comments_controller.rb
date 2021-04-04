@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def new
     # if it's nested and we find the recommendation
     if params[:recommendation_id] && @recommendation = Recommendation.find_by_id(params[:recommendation_id])
-      @comment = @recommendation.comments.build 
+      @comment = @recommendation.comments.build
     else
       @comment = Comment.new
     end
@@ -24,5 +24,11 @@ class CommentsController < ApplicationController
   end
 
   def show
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:title, :content, :recommendation_id)
   end
 end
