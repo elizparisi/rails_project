@@ -9,10 +9,6 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new
   end
 
-  def show
-    @recommendation = Recommendation.find_by_id(params[:id])
-  end
-
   def create
     @recommendation = current_user.recommendations.build(recommendation_params)
 
@@ -22,25 +18,27 @@ class RecommendationsController < ApplicationController
       render :new
     end
 
-    def edit
-      @recommendation = Recommendation.find_by_id(params[:id])
-      redirect_to recommendations_path if !@recommendation || @recommendation.user != current_user
+  def show
+    @recommendation = Recommendation.find_by_id(params[:id])
+  end
+
+  def edit
+    @recommendation = Recommendation.find(params[:id])
+  end
+
+  def update
+     @recommendation = current_user.recommendations.find(params[:id])
+
+    if @recommendation.update(recommendation_params)
+      redirect_to recommendation_path(@recommendation)
+    else
+      render :edit
     end
+  end
 
-    def update
-      @recommendation = Recommendation.find_by(id: params[:id])
-      redirect_to recommendations_path if !@recommendation || @recommendation.user != current_user
-
-      if @recommendation.update(recommendation_params)
-        redirect_to recommendation_path(@recommendation)
-      else
-        render :edit
-      end 
-    end
-
-    def destroy
-      @recommendation = Recommendation.find(params[:id])
-      @recommendation.destroy
+  def destroy
+    @recommendation = Recommendation.find(params[:id])
+    @recommendation.destroy
       redirect_to recommendations_path
     end
   end
