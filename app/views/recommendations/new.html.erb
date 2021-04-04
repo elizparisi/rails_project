@@ -1,3 +1,11 @@
+<% if @recommendation.errors %>
+  <ul>
+    <%  @recommendation.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <%end%>
+  </ul>
+<% end %>
+
 <h1>Make a New Recommendation</h1>
 
 <%= form_for(@recommendation) do |f| %>
