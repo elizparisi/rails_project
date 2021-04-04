@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action: :redirect_if_not_logged_in
 
   def index
     #check to see if it's nested (is there a recommendation id?) & is the id good data?
