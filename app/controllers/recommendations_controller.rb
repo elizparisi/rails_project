@@ -1,4 +1,5 @@
 class RecommendationsController < ApplicationController
+  before_action :redirect_if_not_logged_in
 
   def index
     @recommendations = Recommendation.all
@@ -34,6 +35,7 @@ class RecommendationsController < ApplicationController
     end
 
     def destroy
+      @recommendation = Recommendation.find(params[:id])
       @recommendation.destroy
       redirect_to recommendations_path
     end
