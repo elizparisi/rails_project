@@ -4,7 +4,11 @@
 <h3><%= @recommendation.name %></h3>
 <p>Location: <%= @recommendation.location %></p>
 <p>Description: <%= @recommendation.description %></p>
-<%= link_to "Edit", edit_recommendation_path(@recommendation) %>
 <%= link_to "Back", recommendations_path %>
+
+<% if logged_in? && @recommendation.user_id === current_user.id %>
+  <%= link_to "Edit", edit_recommendation_path(@recommendation) %>
+  <%= link_to "Delete", recommendation_path(@recommendation), method: :delete %>
+<% end %>
 
 <%= link_to "Comment!", new_recommendation_comment_path(@recommendation) %>
