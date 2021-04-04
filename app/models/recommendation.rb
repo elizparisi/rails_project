@@ -6,6 +6,6 @@ class Recommendation < ApplicationRecord
 
   has_one_attached :image
 
-  validates :image_url, :name, :location, :description, presence: true
-  validates :name, uniqueness: { case_sensitive: false } 
+  validates :image, :name, :location, :description, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
 end
