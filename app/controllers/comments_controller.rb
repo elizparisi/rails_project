@@ -4,27 +4,23 @@ class CommentsController < ApplicationController
 
 
   def index
-    #check to see if it's nested (is there a recommendation id?) & is the id good data?
-    if params[:recommendation_id] && @recommendation = Recommendation.find_by_id(params[:recommendation_id])
-      #nested comments
-      @comments = @recommendation.comments
-    else
-      @comments = Comment.all
-    end
+    @comments = @recommendation.comments
   end
 
   def new
+    @comment = @recommendations.comments.build
     # if it's nested and we find the recommendation
-    if params[:recommendation_id] && @recommendation = Recommendation.find_by_id(params[:recommendation_id])
-      @comment = @recommendation.comments.build
-    else
-      @comment = Comment.new
-    end
+    #if params[:recommendation_id] && @recommendation = Recommendation.find_by_id(params[:recommendation_id])
+    #  @comment = @recommendation.comments.build
+    #else
+    #  @comment = Comment.new
+    #end
   end
 
   def create
+    @comment = @recommendations.comments.build
     #@recommendation = Recommendation.find(params[:comment][:recommendation_id])
-    @comment = current_user.comments.build(comment_params)
+    #@comment = current_user.comments.build(comment_params)
     if @comment.save
       redirect_to recommendation_comments_path
     else
