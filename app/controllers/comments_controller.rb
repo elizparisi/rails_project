@@ -7,8 +7,11 @@ class CommentsController < ApplicationController
     @comments = @recommendation.comments
   end
 
+  def show
+  end
+
   def new
-    @comment = @recommendations.comments.build
+    @comment = @recommendation.comments.build
     # if it's nested and we find the recommendation
     #if params[:recommendation_id] && @recommendation = Recommendation.find_by_id(params[:recommendation_id])
     #  @comment = @recommendation.comments.build
@@ -18,9 +21,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @recommendations.comments.build
-    #@recommendation = Recommendation.find(params[:comment][:recommendation_id])
-    #@comment = current_user.comments.build(comment_params)
+    #@comment = @recommendation.comments.build
+    @recommendation = Recommendation.find(params[:comment][:recommendation_id])
+    @comment = current_user.comments.build(comment_params)
     if @comment.save
       redirect_to recommendation_comments_path
     else

@@ -5,6 +5,10 @@ class RecommendationsController < ApplicationController
     @recommendations = Recommendation.all
   end
 
+  def show
+    @recommendation = Recommendation.find_by_id(params[:id])
+  end
+
   def new
     @recommendation = Recommendation.new
   end
@@ -17,10 +21,6 @@ class RecommendationsController < ApplicationController
     else
       render :new
     end
-
-  def show
-    @recommendation = Recommendation.find_by_id(params[:id])
-  end
 
   def edit
     @recommendation = Recommendation.find(params[:id])
