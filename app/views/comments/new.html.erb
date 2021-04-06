@@ -1,6 +1,6 @@
 <h1>Let us know what you think of <%= @comment.recommendation.name %></h1>
 
-<%= form_for(@comment) do |f| %>
+<%= form_for([@comment.recommendation, @comment]) do |f| %>
 
   <%= f.hidden_field :recommendation_id, :value => @recommendation.id %>
 

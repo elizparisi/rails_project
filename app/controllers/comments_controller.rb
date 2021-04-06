@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @recommendation = Recommendation.find(params[:comment][:recommendation_id])
+    #@recommendation = Recommendation.find(params[:comment][:recommendation_id])
     @comment = current_user.comments.build(comment_params)
 
     if @comment.save
