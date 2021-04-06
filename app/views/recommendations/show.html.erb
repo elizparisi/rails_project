@@ -9,6 +9,6 @@
 <% if logged_in? && @recommendation.user_id === current_user.id %>
   <%= link_to "Edit", edit_recommendation_path(@recommendation) %>
   <%= link_to "Delete", recommendation_path(@recommendation), method: :delete %>
+<% else %>
+  <%= link_to "Comment!", new_recommendation_comment_path(@recommendation) %>
 <% end %>
-
-<%= link_to "Comment!", new_recommendation_comment_path(@recommendation) %>
