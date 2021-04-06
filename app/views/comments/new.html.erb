@@ -2,6 +2,8 @@
 
 <%= form_for(@comment) do |f| %>
 
+  <%= f.hidden_field :recommendation_id, :value => @recommendation.id %>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br>
