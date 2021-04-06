@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   before_action :redirect_if_not_logged_in
+  before_action :get_recommendation
+
 
   def index
     #check to see if it's nested (is there a recommendation id?) & is the id good data?
@@ -35,6 +37,10 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = Comment.find_by(id: params[:id])
+  end
+
+  def get_recommendation
+    @recommendation = Recommendation.find(params[:recommendation_id])
   end
 
   def comment_params
