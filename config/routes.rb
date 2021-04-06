@@ -9,10 +9,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :recommendations do
-    resources :comments, only: [:index, :new, :create]
-
-
-
+    resources :comments
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

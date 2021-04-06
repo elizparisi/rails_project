@@ -23,9 +23,8 @@ class CommentsController < ApplicationController
   def create
     #@recommendation = Recommendation.find(params[:comment][:recommendation_id])
     @comment = current_user.comments.build(comment_params)
-
     if @comment.save
-      redirect_to comments_path
+      redirect_to recommendation_comments_path
     else
       render :new
     end
@@ -33,6 +32,10 @@ class CommentsController < ApplicationController
 
 
   private
+
+  def set_comment
+    @comment = Comment.find_by(id: params[:id])
+  end
 
   def comment_params
     params.require(:comment).permit(:title, :content, :recommendation_id)
