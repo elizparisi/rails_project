@@ -1,6 +1,6 @@
 <h1>Hey <%= current_user.username %>, nice recommendation!</h1>
 
-<%= image_tag(@recommendation.image, style:'width: 25%') %>
+<div> <img src="<%= @recommendation.image_url %>" alt="<%= @recommendation.name %>" height="300" width="300"> </div>
 <h3><%= @recommendation.name %></h3>
 <p>Location: <%= @recommendation.location %></p>
 <p>Description: <%= @recommendation.description %></p>

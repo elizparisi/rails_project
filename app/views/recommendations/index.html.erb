@@ -3,7 +3,7 @@
 <div class="recos">
   <% @recommendations.each do |recommendation| %>
 
-    <%= image_tag(recommendation.image, style:"width:200px" "height:200px") %>
+    <p><img src="<%= recommendation.image_url %>" alt="<%= recommendation.name %>" height="200" width="200"><p>
     <br>
     <%= recommendation.name %>
     <%= recommendation.location %>
