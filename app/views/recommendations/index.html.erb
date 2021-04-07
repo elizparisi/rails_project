@@ -8,7 +8,9 @@
     <%= recommendation.name %>
     <%= recommendation.location %>
     <%= recommendation.description %>
-    <%= link_to "Learn more", recommendation_path(recommendation) %>
+    <br>
+    <%= link_to "Learn more and Comment", recommendation_path(recommendation) %>
+    <%= link_to "See Comments", recommendation_comments_path(recommendation) %>
     <br>
     <br>
     <br>
