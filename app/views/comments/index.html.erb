@@ -2,6 +2,9 @@
 
 <ul>
 <% @comments.each do |comment|%>
-  <li><%= comment.user.username%> says "<%= comment.content%>" about this recommendation: <strong><%= link_to comment.recommendation.name, recommendation_path(comment.recommendation_id) %></strong></li>
+  <li><p><strong> <%= comment.title %> </strong></p>
+      <p>"<%= comment.content%>" by: <%= comment.user.username%>
+      <p>About this recommendation: <strong><%= link_to comment.recommendation.name,recommendation_path(comment.recommendation_id) %></strong></p>
+  </li>
 <% end %>
 </ul>
