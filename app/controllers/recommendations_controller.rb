@@ -37,7 +37,7 @@ class RecommendationsController < ApplicationController
   end
 
   def destroy
-    @recommendation = Recommendation.find(params[:id])
+    @recommendation = current_user.recommendations.find(params[:id])
     @recommendation.destroy
       redirect_to recommendations_path
     end
