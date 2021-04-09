@@ -25,9 +25,10 @@ gem 'better_errors', '~> 2.6'
 gem 'binding_of_caller', '~> 1.0'
 gem 'bootstrap-sass'
 gem 'omniauth'
-gem 'omniauth-github'
-gem "dotenv-rails", "~> 2.7"
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

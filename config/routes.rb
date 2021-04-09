@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/auth/github/callback', to: 'sessions#github'
+  match '/auth/github/callback', to: 'sessions#github', :via => [:get, :post]
 
   resources :users
   resources :recommendations do
