@@ -1,3 +1,11 @@
+<% if @comment.errors %>
+  <ul>
+    <%  @comment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <%end%>
+  </ul>
+<% end %>
+
 <h1>Let us know what you think of <%= @comment.recommendation.name %></h1>
 
 <%= form_for([@comment.recommendation, @comment]) do |f| %>
