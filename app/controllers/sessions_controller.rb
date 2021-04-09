@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
   def omniauth
     if params[:provider]== 'github'
       user = User.create_from_omniauth_github(auth)
+    end
 
     if user.save
       session[:user_id] = user.id

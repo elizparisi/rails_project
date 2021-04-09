@@ -2,7 +2,7 @@ class RecommendationsController < ApplicationController
   before_action :redirect_if_not_logged_in
 
   def index
-    @recommendations = Recommendation.all
+    @recommendations = Recommendation.alpha
   end
 
   def show

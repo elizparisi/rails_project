@@ -7,4 +7,6 @@ class Recommendation < ApplicationRecord
   has_one_attached :image
 
   validates :name, :image_url, :location, :description, presence: true
+
+  scope :alpha, -> { order (:name)}
 end
