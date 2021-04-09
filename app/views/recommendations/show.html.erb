@@ -1,4 +1,8 @@
-<h1>Hey <%= current_user.username %>, nice recommendation!</h1>
+<% if logged_in? &&  recommendation_creator #@recommendation.user_id === current_user.id %>
+  <h1>Hey <%= current_user.username %>, nice recommendation!</h1>
+<% else %>
+  <h1><%= current_user.username %> check this one out!</h1>
+<% end %>
 
 <div> <img src="<%= @recommendation.image_url %>" alt="<%= @recommendation.name %>" height="300" width="300"> </div>
 <h3><%= @recommendation.name %></h3>
@@ -6,7 +10,7 @@
 <p>Description: <%= @recommendation.description %></p>
 <%= link_to "Back", recommendations_path %>
 
-<% if logged_in? && @recommendation.user_id === current_user.id %>
+<% if logged_in? &&  recommendation_creator #@recommendation.user_id === current_user.id %>
   <%= link_to "Edit", edit_recommendation_path(@recommendation) %>
   <%= link_to "Delete", recommendation_path(@recommendation), method: :delete %>
 <% else %>

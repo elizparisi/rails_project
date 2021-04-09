@@ -1,6 +1,6 @@
 module RecommendationsHelper
 
   def recommendation_creator
-    @recommendation.user === current_user
+    @recommendation.user_id === current_user.id
   end
 end
