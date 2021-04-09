@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+ @import url(http://fonts.googleapis.com/css?family=Raleway);
+ body{
+
+     background-color:#05262e;
+     color:#B58900;
+
+ }
+
+ a{
+
+     color:#B58900 !important;
+
+ }
+ .nav-item {
+     font-family: Century Gothic;
+     margin: 0 auto;
+     padding: 2em 3em;
+     text-align: center;
+ }
+ .nav-item a {
+     color: #B58900;
+     text-decoration: none;
+     font: 20px Century Gothic;
+     margin: 0px 10px;
+     padding: 10px 10px;
+     position: relative;
+     z-index: 0;
+ }
+
+
+ /* Top & Bottom Borders Out */
+ .topBotomBordersOut a:before, .topBotomBordersOut a:after {
+     position: absolute;
+     left: 0px;
+     width: 100%;
+     height: 2px;
+     background: #FFF;
+     content:"";
+     opacity: 0;
+     -webkit-transition: all 0.3s;
+     transition: all 0.3s;
+ }
