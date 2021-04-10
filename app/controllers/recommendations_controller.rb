@@ -21,6 +21,7 @@ class RecommendationsController < ApplicationController
     else
       render :new
     end
+  end
 
   def edit
     @recommendation = Recommendation.find(params[:id])
@@ -37,10 +38,10 @@ class RecommendationsController < ApplicationController
   end
 
   def destroy
+    #@recommendation = current_user.recommendations.find(params[:id])
     @recommendation = current_user.recommendations.find(params[:id])
     @recommendation.destroy
-      redirect_to recommendations_path
-    end
+    redirect_to recommendations_path
   end
 
   private
