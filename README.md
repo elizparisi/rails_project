@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BeFound
 
-Things you may want to cover:
+BeFound is an app built on Rails. Users can create an account with BeFound to make and view recommendations, and comment on other users recommendations.
 
-* Ruby version
+Features
 
-* System dependencies
+    Login with Google
 
-* Configuration
+Technologies
 
-* Database creation
+Project created with:
 
-* Database initialization
+    Rails 6.0.2
+    Bootstrap-Sass
+    Sqlite3 1.4
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Installation Instructions
 
-* Deployment instructions
+To run this app, fork this repo and follow the steps below:
 
-* ...
+$ cd .../rails_project
+$ bundle install
+$ rails db:migrate
+$ rails s
+
+Visit your local server, http://localhost:3000
+
+Contributing
+
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+
+License
+
+The gem is available as open source under the terms of the MIT License.
