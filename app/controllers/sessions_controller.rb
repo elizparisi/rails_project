@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  skip_before_filter :verify_authenticity_token, only: [:github]
 
   def create
     #find the user
@@ -19,15 +18,13 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def github
-    #find_or_create a user using the attributes auth
-    @user = User.find_or_create_by(email: auth["info"]["email"]) do |user|
-      user.username = auth["info"]["first_name"]
-      user.password = SecureRandom.hex(10)
-    end
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+  def omniauth
+    #find_or_create a user using the attributes from auth
+    user = User.create_from_omniauth(auth)
+
+    if user.valid?
+      session[:user_id] = user.id
+      redirect_to user_path(user)
     else
       redirect_to root_path
     end
