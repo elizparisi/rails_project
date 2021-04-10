@@ -1,3 +1,25 @@
 // Place all the styles related to the recommendations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+body{
+
+    background-color:#05262e;
+    color:#B58900;
+
+}
+
+a{
+
+    color:#B58900 !important;
+}
+
+h1 {
+
+  color: #fbeecb;
+}
+
+div.solo {
+  border-style: double;
+  border-color: #fbeecb;
+}
