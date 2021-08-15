@@ -3,23 +3,27 @@
 <div class="recos">
   <% @recommendations.each do |recommendation| %>
 
-  <div class ="solo">
-    <p><img src="<%= recommendation.image_url %>" alt="<%= recommendation.name %>" height="200" width="200"><p>
-    <br>
-    <p><%= recommendation.name %>
-    <br>
-    Location: <%= recommendation.location %>
-    <br>
-    Description: <%= recommendation.description %>
-    </p>
-    <br>
-    <%= link_to "Learn more and Comment", recommendation_path(recommendation) %>
-    <br>
-    <%= link_to "See Comments", recommendation_comments_path(recommendation) %>
-    <br>
-    <br>
-    <br>
+  <div class ="solo" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="<%= recommendation.image_url %>" alt="<%= recommendation.name %>" height="200" width="200">
+    <div class="card-body">
+      <h5 class="card-title"><%= recommendation.name %></h5>
+      <p class="card-text">Location: <%= recommendation.location %>
+        Description: <%= recommendation.description %>
+      </p>
+      <%= link_to "Learn more and Comment", recommendation_path(recommendation) %>
+      <br>
+      <%= link_to "See Comments", recommendation_comments_path(recommendation) %>
+    </div>
   </div>
 
   <% end %>
 </div>
+
+<!-- <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->
