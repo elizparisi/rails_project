@@ -22,8 +22,16 @@ Installation Instructions
 To run this app, fork this repo and follow the steps below:
 
 $ cd .../rails_project
+<<<<<<< HEAD
 $ bundle install
 $ rails db:migrate
+=======
+
+$ bundle install
+
+$ rails db:migrate
+
+>>>>>>> 1a9261c072a118207daec6799f5efe1b71af656b
 $ rails s
 
 Visit your local server, http://localhost:3000
