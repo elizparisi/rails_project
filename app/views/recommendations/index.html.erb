@@ -1,8 +1,10 @@
 <h1>All Recommendations</h1>
 
 <div class="recos">
+  <div class="container">
+    <div class="row">
   <% @recommendations.each do |recommendation| %>
-
+  <div class="col-sm-6">
   <div class ="solo" class="card" style="width: 18rem;">
     <img class="card-img-top" src="<%= recommendation.image_url %>" alt="<%= recommendation.name %>" height="200" width="200">
     <div class="card-body">
@@ -15,8 +17,11 @@
       <%= link_to "See Comments", recommendation_comments_path(recommendation) %>
     </div>
   </div>
+  </div>
 
   <% end %>
+    </div>
+  </div>
 </div>
 
 <!-- <div class="card" style="width: 18rem;">
