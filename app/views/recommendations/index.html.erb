@@ -14,8 +14,8 @@
       <p class="card-text">Location: <%= recommendation.location %><br>
         Description: <%= recommendation.description %>
       </p>
-      <%= button_to "Learn more and Comment", recommendation_path(recommendation) %>
-      <%= button_to "See Comments", recommendation_comments_path(recommendation) %>
+      <%= button_to "Learn more and Comment", recommendation_path(recommendation), method: :get %>
+      <%= button_to "See Comments", recommendation_comments_path(recommendation), method: :get %>
     </div>
   </div>
   </div>
