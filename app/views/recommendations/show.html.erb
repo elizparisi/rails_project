@@ -4,7 +4,7 @@
   <h1><%= current_user.username %> check this one out!</h1>
 <% end %>
 
-<div> <%= image_tag(@recommendation.image) %> <img alt="<%= @recommendation.name %>" height="300" width="300"> </div>
+<div> <img src="<%= (url_for(@recommendation.image)) %>" alt="<%= @recommendation.name %>" height="300" width="300"> </div>
 <h3><%= @recommendation.name %></h3>
 <p>Location: <%= @recommendation.location %></p>
 <p>Description: <%= @recommendation.description %></p>
