@@ -7,14 +7,15 @@
   <% @recommendations.each do |recommendation| %>
   <div class="col-sm-6">
   <div class ="solo" class="card">
-    <img class="card-img-top" src="<%= recommendation.image_url %>" alt="<%= recommendation.name %>" height="200" width="200">
+    <div class="card-img-top"> <% if recommendation.image.attached? %> <img src="<%= (url_for(recommendation.image)) %>" alt="<%= recommendation.name %>" height="200" width="200"> <% end %>
+    </div>
     <div class="card-body">
       <h5 class="card-title"><%= recommendation.name %></h5>
-      <p class="card-text">Location: <%= recommendation.location %>
+      <p class="card-text">Location: <%= recommendation.location %><br>
         Description: <%= recommendation.description %>
       </p>
-      <%= button_to "Learn more and Comment", recommendation_path(recommendation) %>
-      <%= button_to "See Comments", recommendation_comments_path(recommendation) %>
+      <%= button_to "Learn more and Comment", recommendation_path(recommendation), method: :get %>
+      <%= button_to "See Comments", recommendation_comments_path(recommendation), method: :get %>
     </div>
   </div>
   </div>
