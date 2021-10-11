@@ -7,7 +7,7 @@
   <% @recommendations.each do |recommendation| %>
   <div class="col-sm-6">
   <div class ="solo" class="card">
-    <div class="card-img-top"> <% if recommendation.image.attached? %> <img src="<%= (url_for(recommendation.image)) %>" alt="<%= recommendation.name %>" height="200" width="200"> <% end %>
+    <div class="card-img-top"> <% if recommendation.image.attached? %> <img src="<%= (url_for(recommendation.image)) %>" alt="<%= recommendation.name %>" width="440px" height="400px"> <% end %>
     </div>
     <div class="card-body">
       <h5 class="card-title"><%= recommendation.name %></h5>
