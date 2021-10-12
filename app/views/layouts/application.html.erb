@@ -17,13 +17,13 @@
   <body>
     <div>
       <% if logged_in? %>
-        <%= link_to "Recommendations", recommendations_path %>
-        <%= link_to "Make a Recommendation", new_recommendation_path %>
+        <%= button_to "Recommendations", recommendations_path, method: :get %>
+        <%= button_to "Make a Recommendation", new_recommendation_path, method: :get %>
 
-        <%= link_to "Logout", logout_path, method: "delete" %>
+        <%= button_to "Logout", logout_path, method: "delete" %>
       <% else %>
-        <%= button_to "Sign Up", signup_path %>
-        <%= button_to "Login", login_path %>
+        <%= button_to "Sign Up", signup_path, method: :get %>
+        <%= button_to "Login", login_path, method: :get %>
         <%= button_to "Log In with Google", '/auth/google_oauth2' %>
       <% end %>
     </div>
