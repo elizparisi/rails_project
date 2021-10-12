@@ -14,7 +14,9 @@
       <p class="card-text">Location: <%= recommendation.location %><br>
         Description: <%= recommendation.description %>
       </p>
+      <% if logged_in? && recommendation.user_id !== current_user.id %>
       <%= button_to "Learn more and Comment", recommendation_path(recommendation), method: :get, class:"buttons" %>
+      <% end %>
       <%= button_to "See Comments", recommendation_comments_path(recommendation), method: :get, class:"buttons" %>
     </div>
   </div>
