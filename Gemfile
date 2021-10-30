@@ -29,6 +29,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+gem 'ddtrace', require: 'ddtrace/auto_instrument'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
